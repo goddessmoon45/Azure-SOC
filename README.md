@@ -32,24 +32,32 @@ For the "BEFORE" metrics, all resources were originally deployed, exposed to the
 For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
 
 ## Attack Maps Before Hardening / Security Controls
-![NSG Allowed Inbound Malicious Flows](https://i.imgur.com/1qvswSX.png)<br>
-![Linux Syslog Auth Failures](https://i.imgur.com/G1YgZt6.png)<br>
-![Windows RDP/SMB Auth Failures](https://i.imgur.com/ESr9Dlv.png)<br>
+WINDOWS RDP AUTH
+![windows rdp auth](https://github.com/goddessmoon45/Azure-SOC/assets/144558304/d6ba9771-b783-4971-823d-74da91e2636a)
+
+MALICIOUS NSG ALLOWED IN
+![malicious nsg allowed in](https://github.com/goddessmoon45/Azure-SOC/assets/144558304/aae8aaa5-59b3-4b26-a921-50fa406aaf27)
+
+LINUX SSH FAIL
+![linux ssh fail](https://github.com/goddessmoon45/Azure-SOC/assets/144558304/d872d273-bc1c-4618-ae5e-fa7cd0491d72)
+
+MSSQL AUTH FAIL
+![mssql auth fail](https://github.com/goddessmoon45/Azure-SOC/assets/144558304/c3d56045-2338-4317-afff-712d2ba352e2)
+
 
 ## Metrics Before Hardening / Security Controls
 
 The following table shows the metrics we measured in our insecure environment for 24 hours:
-Start Time 2023-03-15 17:04:29
-Stop Time 2023-03-16 17:04:29
+Start Time	2024-06-10T14:32:25.1699288Z
+Stop Time	  2024-06-11T14:32:25.1699288Z
 
 | Metric                   | Count
 | ------------------------ | -----
-| SecurityEvent            | 19470
-| Syslog                   | 3028
-| SecurityAlert            | 10
-| SecurityIncident         | 348
-| AzureNetworkAnalytics_CL | 843
-
+| SecurityEvent            | 14358
+| Syslog                   | 2345
+| SecurityAlert            | 6
+| SecurityIncident         | 73
+| AzureNetworkAnalytics_CL | 103
 ## Attack Maps Before Hardening / Security Controls
 
 ```All map queries actually returned no results due to no instances of malicious activity for the 24 hour period after hardening.```
@@ -57,13 +65,14 @@ Stop Time 2023-03-16 17:04:29
 ## Metrics After Hardening / Security Controls
 
 The following table shows the metrics we measured in our environment for another 24 hours, but after we have applied security controls:
-Start Time 2023-03-18 15:37
-Stop Time	2023-03-19 15:37
+	
+Start Time	2024-06-12T13:33:26.8036683Z
+Stop Time   2024-06-13T13:33:26.8036683Z
 
 | Metric                   | Count
 | ------------------------ | -----
-| SecurityEvent            | 8778
-| Syslog                   | 25
+| SecurityEvent            | 400
+| Syslog                   | 0
 | SecurityAlert            | 0
 | SecurityIncident         | 0
 | AzureNetworkAnalytics_CL | 0
